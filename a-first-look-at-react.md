@@ -1,76 +1,73 @@
 # A First Look At React
 
-in this section ham log dekhnge ki 
+In This Section Ham Log Dekhnge Ki 
 - [Why Do Front-End Frameworks Exist?](#why-do-front-end-frameworks-exist)
-- [react vs vanilla js](#react-vs-vanilla-js)
-- [what is react?](#what-is-react?)
-- [How to create the react project?](#how-to-create-the-react-project)
+- [React Vs Vanilla JS](#react-vs-vanilla-js)
+- [What Is React?](#what-is-react)
+- [How To Create The React Project?](#how-to-create-the-react-project)
 
 ## Why Do Front-End Frameworks Exist<a name="why-do-front-end-frameworks-exist"></a>
 
+Pahle Ke Samay Me Jab Website Server Side Wali Hoti Thi To Hame Website Ke Code Server Se Milta Tha Then Wo Code Hamre Website(Clinte-Side) Pe Aa Kar Lag Jata Tha.
 
-pahle ke samy me jab website sever side wali hoti thi to hame website ke code server se milta tha then wo code hamre website(clinte-side) pe aa kar lag jata tha
+Iska Example WordPress Hai  
+Yaha Pe Rendering Server Side Ho Rahi Hai.
 
-iska example wordpress hai
-yaha pe rendering server side ho rahi hai
+![Server-Side](https://github.com/user-attachments/assets/e3b6e8ab-48a7-4a14-9795-5770055681b3)
 
-![server-side](https://github.com/user-attachments/assets/e3b6e8ab-48a7-4a14-9795-5770055681b3)
+But Now Ab Ham Server Se Code Ki Jagah API Se Code Lete Hai Jo Clinte-Side Pe Aake Render Hota Hai So Isse Hi Single Page Application Kahte Hai Jo Ek Page Me Hi Sara Data Rakhe And Bina Reload Ke Interact Kare User Se.
 
-but now ab ham server se code ki jagh api se code lete hai jo clinte-side pe aake render hota hai so isse hi single page application kahte hai jo ek page me hi sara data rakhe and bina reload ke intrect kare user se
+![Clinte-Side](https://github.com/user-attachments/assets/4fab1293-6f9c-4e1d-a531-cc11008bdc74)
 
-![clinte-side](https://github.com/user-attachments/assets/4fab1293-6f9c-4e1d-a531-cc11008bdc74)
+### Why We Can't Build A Single-Page App In Vanilla JS?
 
-### why we can't build a singel-page app in vanilla js?
+- Agar Ham Karna Bhi Chahe To Bahut Sare Code Ka Mess Ban Jayega
+- Ye UI Ko Data Se Sync Nahi Rakh Pata Hai Har
+- Wahi React Data Ko UI Se Sync Rakhata Hai Bina Kisi Reload Ke
+- Harder To Understand And Create More Bugs
 
-- agar ham karna bhi chahe to bahut sare code ka mess ban jayega
-- ye ui ko data se syunc nhi rakh pata hai har
-- wahi react data ko ui se sync rakhta hai bina kisis reload ke
-- harder to understand and create more bug
+So Final Ans Yah Hai Ki Hame Framework Ki Jarurat Isliye Padti Hai Kyuki Isse Ham Data Ko UI Se Sync Rakh Sakte Hai (And React Bhi Ek Framework Hi Hai Jo JavaScript Ko Apna Base Manti Hai).
 
-so final ans yah hai ki hame framework ki jarurat isliye padti hai kyuki isse ham data ko ui se sync rakh skte hai (and react bhi ek framework hi hai jo javascript ko apna base manti hai) 
+## React Vs Vanilla JS<a name="react-vs-vanilla-js"></a>
 
-## react vs vanilla js<a name="react-vs-vanilla-js"></a>
+- Code Ka Mess Jyada Nahi Hota Hai
+- Hame Vanilla JS Me Ek Ek Step Bata Kar Karna Hota Hai Like (How To Do It?)
+- Wahi Hame React Me (What To Do?) Batana Hota Hai
 
-- code ka mess jyada nhi hota hai
-- hame vanilla js me ek ek step bata kar karna hota hai like(how to do it?)
-- wahi hame react me (what to do ?) batana hota hai
+## What Is React?<a name="what-is-react"></a>
 
-## what is react?<a name="what-is-react?"></a>
+So Ye Ek JS Ki Library Hai.
 
-so ye ek js ki libary hai
+![What Is React](https://github.com/user-attachments/assets/256baf30-d8ac-49a5-9f85-d39da74f7f30)
 
-![what is react](https://github.com/user-attachments/assets/256baf30-d8ac-49a5-9f85-d39da74f7f30)
+### Based On Components
+So Component React Ki Ek Building Blocks Hai Ham Webpage Ko Alag-Alag Component Me Bana Kar Usko Render Karate Hai Hai Client Side Pe. We Can Understand By A Logo-Puzzle Example Sabhi Chote Chote Components Se Mil Kar Ek Full Logo Ban Jata Hai.
 
-### based on components
-so componet react ki ek buliding blocks hai ham webpage ko agal alag component me bana kar usko render kara te hai hai clinde side pe we can under stand by a logo-puzzule example sabhi chote chote comoponents se mil kar ek full logo ban jata hai
+![Components](https://github.com/user-attachments/assets/f17f30db-0878-4be6-a57a-f40b85d66e30)
 
-![componets](https://github.com/user-attachments/assets/f17f30db-0878-4be6-a57a-f40b85d66e30)
+### Declarative
+- So Ham Components Ko JSX Syntax Me Likh Kar Dalte Hai
+- And Ye Hame Ye Batata Hai Ki Component Kaisa Dikhna Chahiye Based On Current Data
+- React Ko Banaya Hai Isliye Gaya Hai Ki Hame (Developers) Ko Kabhi Bhi DOM(Document Object Model) Ko Directly Touch Na Karna Pade
+- JSX Ek Syntax Hota Hai Jisme Ham CSS, HTML, JS Ke Parts Laga Sakte Hai And Other Components Ko Bhi Reference Kar Sakta Hai
 
-### declerative
-- so ham componets ko JSX syntax me likh kar dalte hai
-- and ye hame ye bata haiki comopnent kaisa dikhna chahiye based on current data
-- react ko banya hai isliye gya hai ki hame(devlopers) ko kabhi bhi DOM(document object model) ko directly toch na karna pade
-- JSX ek syntax hota hai jisme ham css, html ,js ke parts laga skte hai and other components ko bhi refreance kar skta hai
+### State-Driven
 
-### state-driven
+So Agar Ham Kabhi DOM Ko Touch Hi Nahi Karenge To Ham Change Kaise Karenge?
 
-so agar ham kabhi dom ko toch hi nhi karenge to ham change kaise karenge?
+So Uske Liye State Ka Use Karte Hai Jisse Hota Hai Yah Ki Jaise Hi Ham Kuch Bhi State Me Change Karte Hai UI Bhi Uske According Change Hota Hai Kyuki Wo UI Se Directly Sync Hota Hai.
 
-so uske liye state ka use karte hai jisse hota hai yah ki jaise hi ham kuch bhi state me change karte hai ui bhi us ke according change hota hai kyuki wo ui se directly sync hota hai
+Isliye To Hai React Ko React Kahte Hai Kyuki Wo React Karta Hai.
 
-isliye to hai react ko react kahte hai kyuki wo react karta hai
+## How To Create The React Project? <a name="how-to-create-the-react-project"></a>
 
-## How to create the react project? <a name="how-to-create-the-react-project"></a>
-
-
-so react project ko banane ke liye hame cmd me ja kar
+So React Project Ko Banane Ke Liye Hame CMD Me Ja Kar
 
 ```bash
 npx create-react-app fileName
 ```
+And Agar Apko Project Ko Start Karna Hai Means Local Host Pe Chalna Hai To Hame New Terminal (VS Code) Me Ja Kar Ye Likhna Hai Then Wo Local Host Me Khul Jayega.
 
-and agar apko project ko Start karna hai means local Host pe chalna hai to hame new terminal (vs code) me ja kar ye likhan hai then wo local Host me khul jayega 
-
-```
+```bash
 npm run start
 ```
