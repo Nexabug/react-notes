@@ -9,7 +9,7 @@ so in this section ham log padhenge ki
 - [js logic in components]()
 - [styling in react]()
 - [passing and reciving the props]()
-- [rules of jzx]()
+- [rules of jsx]()
 - [rendering list]()
 - [conditional rendering]()
 - [destructring props]()
@@ -146,8 +146,8 @@ iske maddad se ham child ele ko kuch data ya properties bhi de skte hai
 
 ### how to use it 
 
- - sabse pahle to ham jaha pe child ele ko parent me dala hai wahi pe ek atribute me koi `key:"value"` se deife kar do then
- - child ele wale function me `props` naam ka ka ek parameter dal do and then jaha pe bhi us value ko acess karan ahai waha pe {} iske andr `props.key` se bula lo yaha pe key wo name  hoga jo hane wha pe lagya tha
+ - sabse pahle to ham jaha pe child ele ko parent me dala hai wahi pe ek atribute me koi `key="value"` se deife kar do then
+ - child ele wale function me `props` naam ka ka ek parameter dal do and then jaha pe bhi us value ko acess karan ahai waha pe { } iske andr ye example hai --> `{props.key}` se bula lo yaha pe key wo name  hoga jo hane wha pe lagya tha
 
 ```js
 function Title(props) {
@@ -158,3 +158,37 @@ function App() {
   <Title text='Hello world!' />;
 }
 ```
+we can pass anything from the props like string , arry , object and other react container also
+
+## rules of jsx
+- jsx html ki hi trah kaam karta hai lekin isme ham javascript ko `{ }` ke ander kar skte hai
+- `{ }` iske andar khuch bhi kar skte hai like variable referencing, object/array creation, ternary operations
+- lekin ham kabhi bhi `if/else`  , `for` , `switch` statemnt ka use nhi kar skte hai iske andar
+- jsx hame ek javascript ka expression deta hai
+- agar hame return ke samy ham yah chte hai ki wo ek se jyada element bheje lenkin bina kisi div ke andar the use `<>` and `</>` for opening and closing jisse wo khud ke element me hi jayenge naki kis dusre div me
+
+## rendering list
+  to ham rendering ke liye ham ek data ko bas ek components se dusre me bhjna hota hai taki wo ja kar usse print kar de
+
+  to isko karne ke liye ham `.map()` method se kar skte hai jisme hoga yahi ki
+  - pahle to ham kisi arry pe isse use karenge
+  - then usme se har ek element ko nikalenge then use child wale function ke name me denge `<nameofthechildfunction />`
+  - isse hoga yah ki map jo bhi value arr se nikal kar layega use wo child function ko as a prop dega jise ham kisi `key="value"` me store kara lenge
+  - then child wale function me ja kar props parameter dal kar jo bhi value hoga use le lenge
+  - and hame ek key naam ki object bhi bana kar use koi unqie value de dena usse react hame koi error show nhi karega
+
+  ```js
+  const names = ['Maria', 'Joseph', 'Anthony'];
+
+function Greeting(props) {
+  return <h1>Hello {props.name}!</h1>;
+}
+
+function Greetings() {
+  return names.map((el) => {
+    return <Greeting name={el} key={el} />;
+  });
+}
+```
+## conditional rendering
+yaha pe ham kuch condtion ke hisab se
