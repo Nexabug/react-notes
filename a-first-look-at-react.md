@@ -58,7 +58,13 @@ so uske liye state ka use karte hai jisse hota hai yah ki jaise hi ham kuch bhi 
 
 isliye to hai react ko react kahte hai kyuki wo react karta hai
 
+## How to create the react project?
 
+so react project ko banane ke liye hame cmd me ja kar
+
+```bash
+npx create-react-app fileName
+```
 ## Installation
 ```bash
 npm install my-project
