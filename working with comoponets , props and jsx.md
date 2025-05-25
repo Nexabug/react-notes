@@ -13,7 +13,6 @@ so in this section ham log padhenge ki
 - [rendering list]()
 - [conditional rendering]()
 - [destructring props]()
-- [react fragment]()
 - [setting classes and text conditionaly]()
 
 ## how to do render any thing?
@@ -252,5 +251,25 @@ function Greetings() {
   return names.map((el) => {
     return <Greeting name={el} key={el} />;
   });
+}
+```
+## setting classes and text conditionaly
+ab ham `className` ke naam conditionally acuire karenge
+
+so yaha pe ham ek condition check kar rahe hai ki agar `carObj` ke key jo `soldOut` hai agar wo true hoga to to ek naya `className` aa jayega `'sold-out'` lag jayega otherwise kuch nhi hoga
+
+same in span tag 
+```js
+function Car({ carObj }) {
+  return (
+    <li className={`car-item ${carObj.soldOut && 'sold-out'}`}>
+      <img src={carObj.photoName} alt={carObj.name} />
+      <div>
+        <h3>{carObj.model}</h3>
+        <p>{carObj.year}</p>
+        <span>{!carObj.soldOut ? `${carObj.price}` : `SOLD`}</span>
+      </div>
+    </li>
+  );
 }
 ```
