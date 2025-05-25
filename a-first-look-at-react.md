@@ -1,9 +1,10 @@
 # A First Look At React
 
 in this section ham log dekhnge ki 
-- react kaisa hai?
-- why we need this?
-- 
+- [Why Do Front-End Frameworks Exist?](##why-do-front-end-frameworks-exists?)
+- react vs vanilla js
+- what is react?
+- How to create the react project?
 
 ## Why Do Front-End Frameworks Exist
 
@@ -65,6 +66,9 @@ so react project ko banane ke liye hame cmd me ja kar
 ```bash
 npx create-react-app fileName
 ```
-## Installation
-```bash
-npm install my-project
+
+and agar apko project ko Start karna hai means local Host pe chalna hai to hame new terminal (vs code) me ja kar ye likhan hai then wo local Host me khul jayega 
+
+```
+npm run start
+```
