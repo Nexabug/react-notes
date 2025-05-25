@@ -191,4 +191,66 @@ function Greetings() {
 }
 ```
 ## conditional rendering
-yaha pe ham kuch condtion ke hisab se
+yaha pe ham kuch condtion ke hisab se hisab se jsx ko run karwate hai means gar wo condition satisfy karega then wo jsx ko print karene dega othre wise nhi ya to kuch aur print hoga
+
+### there are two type pf conditional rendering we can do
+- `&&` conditional rendering
+
+so isme hoga yah ki ham `&&` ke left side ek condition hogi and right side wo jsx code jisse print karwana hoga agar left wali condition true hogi tabhi agar true nhi hua to kuch bhi nhi print hoga kyuki jsx me `true` and `false` ki koi value nhi hoti hai matlab wo kabhi print nhi hote hai
+
+```js
+function TimeOfDay() {
+  const hour = new Date().getHours();
+  const dayTime = 6;
+  const nightTime = 18;
+  const isMorning = hour >= dayTime && hour <= nightTime;
+  return <div>{isMorning && <p>The sun is up!</p>}</div>;
+}
+```
+- Using `ternaries` (allows providing an alternative rendering)
+
+so ab hoga yah ki pahle wo condtion check karega agar wo true ho gyi ti pahle jsx print hoga otherwise second jo `:` ke baad hoga agar hame chate hai ki kuch bhi print na ho to ham `''` empty ya `null` likh skte hai second wale me
+```js
+function TimeOfDay() {
+  const hour = new Date().getHours();
+  const dayTime = 6;
+  const nightTime = 18;
+  const isMorning = hour >= dayTime && hour <= nightTime;
+  return (
+    <div>{isMorning ? <p>The sun is up!</p> : <p>It's nighttime!</p>} </div>
+  );
+}
+```
+## destructring props
+ab ham jo child wale function me props likhte hai use replace kar ke direct access kar skte hai bina kisi props ke bas usko hame child wale function ke para meter me destructring karna hoga us key ke naam se
+
+```js
+ const names = ['Maria', 'Joseph', 'Anthony'];
+
+function Greeting({name}) {
+  return <h1>Hello {name}!</h1>;
+}
+
+function Greetings() {
+  return names.map((el) => {
+    return <Greeting name={el} key={el} />;
+  });
+}
+```
+agar apko ek se jayada ko access karna hai to wahi pe comma laga kr jo uska naam hai wo likh do the usko bhi kar paoge 
+```js
+ const names = ['Maria', 'Joseph', 'Anthony'];
+
+function Greeting({name , key}) {
+  return <>
+<h1>Hello {name}!</h1>
+<p>bye {key}</p>
+</>;
+}
+
+function Greetings() {
+  return names.map((el) => {
+    return <Greeting name={el} key={el} />;
+  });
+}
+```
