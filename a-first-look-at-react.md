@@ -2,8 +2,8 @@
 
 in this section ham log dekhnge ki 
 - [Why Do Front-End Frameworks Exist?](##why-do-front-end-frameworks-exists?)
-- react vs vanilla js
-- what is react?
+- [react vs vanilla js](##react-vs-vanilla-js)
+- [what is react?](##what-is-react?)
 - How to create the react project?
 
 ## Why Do Front-End Frameworks Exist
