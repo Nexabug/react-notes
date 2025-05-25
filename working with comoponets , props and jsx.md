@@ -46,7 +46,7 @@ sabse pahle to ham alag alag components ko bante hai the usko main (App) wale fu
 
 ek function sirf ek hi element ko return karta hai agar apko ek se jayada element ko karna hai return to hame un sab ko ek div me dalna padega jisse wo to ek hi element ko retun karega div but uske andar wale bhi uske sath hi return ho jayega
 
-```ruby
+```script
 export default function App(){
    
     return(
