@@ -23,9 +23,9 @@ This guide covers the essentials of React components, JSX syntax, props, renderi
 
 ## How to Render Anything
 
-Start by cleaning up your React app to just two files: `app.js` and `index.js`.
+First, delete everything from your src file except these two files: `app.js` and `index.js`.
 
-In `app.js`, define your main component (component names must start with a capital letter):
+In `app.js`, create an App function (remember component names must start with capital letter):
 
 ```jsx
 export default function App() {
@@ -33,13 +33,14 @@ export default function App() {
 }
 ```
 
-The tag in the return statement will be rendered on the website.
+The HTML tag in the return statement will be rendered/printed on the website.
 
 ---
 
 ## Components as Building Blocks
 
 - React is built from components.
+- React renders components
 - Each component manages its own logic, data, and appearance.
 - Components can be reused and composed.
 
@@ -47,9 +48,9 @@ The tag in the return statement will be rendered on the website.
 
 ## Creating Components
 
-You can compose components by creating them separately and importing them into the main (App) component.
+First we create separate components and then import them into the main (App) component.
 
-A function can only return one element. To return multiple, wrap them in a `<div>` or React fragment.
+A function can only return one element. If you need to return multiple elements, you must wrap them in a div so they become a single element.
 
 ```jsx
 export default function App() {
@@ -69,8 +70,9 @@ function Header() {
   );
 }
 ```
+Here we can see we've included the Header component in App, so whatever is in Header will be rendered by App.
 
-Components can be reused:
+We can reuse the same component multiple times:
 
 ```jsx
 function Title() {
@@ -94,12 +96,10 @@ function App() {
 
 JSX is a JavaScript extension that looks like HTML, allowing us to use CSS, JS, and React components in the same syntax. It gets compiled to JavaScript and rendered on the web page.
 
----
+### Differences between declarative and imperative programming
 
-## Declarative vs. Imperative Programming
-
-- **Imperative:** Specify _how_ to do things step by step.
-- **Declarative:** Specify _what_ you want to do, not how.
+- **Imperative:** requires us to specify each step of how to do something
+- **Declarative:** only requires us to specify what to do, not how to do it
 
 ---
 
@@ -121,7 +121,7 @@ function Title() {
 
 ## Styling in React
 
-**Inline styles:**
+**We can apply inline styles to JSX elements:**
 
 ```jsx
 function Title() {
@@ -135,7 +135,7 @@ function Title() {
 }
 ```
 
-**Directly in the element:**
+**Or directly in the element:**
 
 ```jsx
 function Title() {
@@ -152,7 +152,7 @@ function Title() {
 }
 ```
 
-**External CSS:**
+**For external CSS, first import the CSS file, then use `className`:**
 
 ```jsx
 import './styles.css';
@@ -166,7 +166,12 @@ function Title() {
 
 ## Passing and Receiving Props
 
-Props are data passed from parent to child components.
+Props are used to pass data from parent to child components.
+
+### How to use props
+- Add attributes to the child component in the parent: `<Child key="value" />`
+- In the child component, accept `props` as a parameter
+- Access the value using `{props.key}`
 
 ```jsx
 function Title(props) {
@@ -178,7 +183,7 @@ function App() {
 }
 ```
 
-You can pass strings, arrays, objects, and even components via props.
+We can pass strings, arrays, objects, and even components via props.
 
 ---
 
@@ -201,7 +206,13 @@ JSX must return a single element. To return multiple elements, use a wrapper `<d
 
 ## Rendering Lists
 
-Use `.map()` to render lists:
+To render lists, we pass data from parent to child components using the .map() method:
+
+- Use .map() on an array
+- For each element, return the child component <ChildComponent />
+- Pass array data as props to the child
+- The child component receives props and renders them
+- Add a unique key prop to avoid React errors
 
 ```jsx
 const names = ['Maria', 'Joseph', 'Anthony'];
@@ -217,13 +228,18 @@ function Greetings() {
 }
 ```
 
-**Note:** Always add a unique `key` prop when rendering lists.
 
 ---
 
 ## Conditional Rendering
 
-**Using `&&` operator:**
+We can render JSX based on conditions.
+
+### Two types of conditional rendering:
+1. `&&` operator:
+   - Left side: condition
+   - Right side: JSX to render if condition is true
+   - If false, nothing renders (JSX doesn't render `true/false`)
 
 ```jsx
 function TimeOfDay() {
@@ -233,9 +249,11 @@ function TimeOfDay() {
   const isMorning = hour >= dayTime && hour <= nightTime;
   return <div>{isMorning && <p>The sun is up!</p>}</div>;
 }
-```
-
-**Using ternary operator:**
+```  
+2. Ternary operator:
+   - If condition is `true`, renders first JSX
+   - If `false`, renders second JSX after `:`
+   - Use `null` or `''` to render nothing
 
 ```jsx
 function TimeOfDay() {
@@ -255,7 +273,7 @@ function TimeOfDay() {
 
 ## Destructuring Props
 
-Instead of `props.key`, destructure in the function parameters:
+Instead of using `props.key`, we can destructure props directly in the function parameters:
 
 ```jsx
 function Greeting({ name }) {
@@ -263,7 +281,7 @@ function Greeting({ name }) {
 }
 ```
 
-Multiple props:
+For multiple props:
 
 ```jsx
 function Greeting({ name, key }) {
@@ -280,7 +298,7 @@ function Greeting({ name, key }) {
 
 ## Setting Classes and Text Conditionally
 
-Apply class names based on conditions:
+We can conditionally apply classNames:
 
 ```jsx
 function Car({ carObj }) {
