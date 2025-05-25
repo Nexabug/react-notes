@@ -1,12 +1,12 @@
 # A First Look At React
 
 in this section ham log dekhnge ki 
-- [Why Do Front-End Frameworks Exist?](#hi)
-- [react vs vanilla js](##react-vs-vanilla-js)
-- [what is react?](##what-is-react?)
+- [Why Do Front-End Frameworks Exist?](#why-do-front-end-frameworks-exist)
+- [react vs vanilla js](#react-vs-vanilla-js)
+- [what is react?](#what-is-react?)
 - [How to create the react project?](#how-to-create-the-react-project)
 
-## Why Do Front-End Frameworks Exist
+## Why Do Front-End Frameworks Exist<a name="why-do-front-end-frameworks-exist"></a>
 
 
 pahle ke samy me jab website sever side wali hoti thi to hame website ke code server se milta tha then wo code hamre website(clinte-side) pe aa kar lag jata tha
@@ -29,13 +29,13 @@ but now ab ham server se code ki jagh api se code lete hai jo clinte-side pe aak
 
 so final ans yah hai ki hame framework ki jarurat isliye padti hai kyuki isse ham data ko ui se sync rakh skte hai (and react bhi ek framework hi hai jo javascript ko apna base manti hai) 
 
-## react vs vanilla js
+## react vs vanilla js<a name="react-vs-vanilla-js"></a>
 
 - code ka mess jyada nhi hota hai
 - hame vanilla js me ek ek step bata kar karna hota hai like(how to do it?)
 - wahi hame react me (what to do ?) batana hota hai
 
-## what is react?
+## what is react?<a name="what-is-react?"></a>
 
 so ye ek js ki libary hai
 
