@@ -4,7 +4,7 @@ in this section ham log dekhnge ki
 - [Why Do Front-End Frameworks Exist?](#hi)
 - [react vs vanilla js](##react-vs-vanilla-js)
 - [what is react?](##what-is-react?)
-- How to create the react project?
+- [How to create the react project?](#how-to-create-the-react-project)
 
 ## Why Do Front-End Frameworks Exist
 
@@ -60,8 +60,8 @@ so uske liye state ka use karte hai jisse hota hai yah ki jaise hi ham kuch bhi 
 
 isliye to hai react ko react kahte hai kyuki wo react karta hai
 
-## How to create the react project?
-<a name="hi"></a>
+## How to create the react project? <a name="how-to-create-the-react-project"></a>
+
 
 so react project ko banane ke liye hame cmd me ja kar
 
