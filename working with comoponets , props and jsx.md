@@ -100,3 +100,61 @@ function Title() {
   return <h1>{isMorning}</h1>;
 }
 ```
+## styling in react
+so ham jsx ke element me style ko inline ki trah se laga skte hai
+```js
+function Title() {
+  const styles = {
+    color: 'red',
+    fontSize: '48px',
+    textTransform: 'uppercase',
+    textAlign: 'center',
+  };
+  return <h1 style={styles}>My title</h1>;
+}
+```
+yah fir ham direct hi us element me laga skte hai
+```js
+function Title() {
+ 
+  return <h1 style={ {
+    color: 'red',
+    fontSize: '48px',
+    textTransform: 'uppercase',
+    textAlign: 'center',
+  }}>My title</h1>;
+}
+```
+agar hame external css ko lagana hai to sabse pahle to usko hame import kar lena hai then hame element ko ek `className` de skte hai jo us pe css hoga wah is pe bhi lag jayega
+```js
+// react imports here...
+import 'path/to/css/file';
+
+function Title() {
+  return <h1 className='class-inside-css'>My Title</h1>;
+}
+
+function App() {
+  <Title />;
+}
+```
+## passing and reciving the props
+
+props ek tarika hai jisse ham dta to parent ele se child ele me bhejte hai
+
+iske maddad se ham child ele ko kuch data ya properties bhi de skte hai
+
+### how to use it 
+
+ - sabse pahle to ham jaha pe child ele ko parent me dala hai wahi pe ek atribute me koi `key:"value"` se deife kar do then
+ - child ele wale function me `props` naam ka ka ek parameter dal do and then jaha pe bhi us value ko acess karan ahai waha pe {} iske andr `props.key` se bula lo yaha pe key wo name  hoga jo hane wha pe lagya tha
+
+```js
+function Title(props) {
+  return <h1>{props.text}</h1>;
+}
+
+function App() {
+  <Title text='Hello world!' />;
+}
+```
