@@ -48,11 +48,16 @@ so componet react ki ek buliding blocks hai ham webpage ko agal alag component m
 - so ham componets ko JSX syntax me likh kar dalte hai
 - and ye hame ye bata haiki comopnent kaisa dikhna chahiye based on current data
 - react ko banya hai isliye gya hai ki hame(devlopers) ko kabhi bhi DOM(document object model) ko directly toch na karna pade
-- JSX ek syntax hota hai jisme ham css, html ,js ke parts hote and other components ko bhi refreance kar skta hai
+- JSX ek syntax hota hai jisme ham css, html ,js ke parts laga skte hai and other components ko bhi refreance kar skta hai
 
 ### state-driven
 
-so agar ham kabhi dom ko toch hi nhi karenge to ham change kaise karenge 
+so agar ham kabhi dom ko toch hi nhi karenge to ham change kaise karenge?
+
+so uske liye state ka use karte hai jisse hota hai yah ki jaise hi ham kuch bhi state me change karte hai ui bhi us ke according change hota hai kyuki wo ui se directly sync hota hai
+
+isliye to hai react ko react kahte hai kyuki wo react karta hai
+
 
 ## Installation
 ```bash
