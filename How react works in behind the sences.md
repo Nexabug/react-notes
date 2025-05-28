@@ -36,3 +36,11 @@ so commit phase me hota yah hai ki ise jo react ke element mile hue hai ab unko 
 
 react dom website ke liye hai
 react native android and iOS apps ke liye hai 
+
+## Diffing
+
+### assumption made by Diffing 
+- do alag alag element ke tree alag alag honge
+- element stable rahega agar uska koi key decide hai to otherwise nhi rahega 
+
+to hoga yah ki man lo hamne ki ke parents ke type ko change kar diya means div se header and anything ho gya to us State me uske render hoga and  children bhi hoga render 
