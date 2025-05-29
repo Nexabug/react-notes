@@ -151,3 +151,24 @@ function FruitList() {
 ### Conclusion:
 
 React ka diffing algorithm isliye powerful hai kyunki ye minimal DOM operations karta hai. Agar aap keys ka sahi istemal karenge to apki apps ki performance bahut improve hogi!
+
+
+## Library vs Framework
+
+### frameworks 
+pros
+- So frameworks ek full kit hota hai jisse ham ek full stack web ko bana skte hai 
+- we don't need to include any extra library for buliding a site
+
+cons 
+- hame uska convention pasand aye ya na aye hame fir bhi use use karna hi padega 
+- koi bhi changes nhi kar skte hai
+
+### library 
+pros
+- isme ham apne pasand ke anusar external libraryies ko laga skte hai
+- variety of options to include in our project 
+
+cons
+- hame khud se unko upto date karna padta hai
+- hame khud dhundh dhund kar lagana hota hai jo jyadaa time consuming bhi ho skta hai
