@@ -57,3 +57,31 @@ and ek aur baat useeffect ki ye tabhi work karta hai jabtak pura dom tree render
 
 **Simple Matlab:**  
 `useEffect` = "React ke bahar ka kaam karne ka tarika" ✅
+
+
+## use of asynchronous function in useeffect 
+
+```jsx
+  useEffect( function (){
+    // Step 1: Normal function banayo
+
+    function fetchData () {
+      try {
+        // Step 2: API call karo (fetch/axios)
+        const response = await fetch('https://api.example.com/data');
+        const result = await response.json();
+        
+        // Step 3: Data state mein set karo
+        setData(result);
+      } catch (error) {
+        console.error("API Error:", error);
+      }
+    };
+
+    // Step 4: Function call karo
+    fetchData();
+  }, []); // Empty dependency = sirf ek baar chalega
+
+}
+```
+Ham yahan per dekh sakte hain ki humne use effect ke andar ek asynchronous function chalaya Hai Jo ek api se data lekar aa raha hai to humne usko ek to pahle Try me Rakha Hai aur ek ko catch block mein rakha hai to try mein jo bhi error aaega wahi catch wale block me chala jayega aur ham control error kar ke console me dekh skte hai
