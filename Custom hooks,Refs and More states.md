@@ -87,3 +87,24 @@ const inputel = useRef(null)
   )
 ```
 to jaise ham yaha pe dekh skte hamne ek input me conect kiya hai and usme .focus nam ka effect lagya hai bina use manually DOM selection
+
+## custom hooks
+to sabse pahle agar apko custom hook banni hai to uske start me use to hona hi chahiye
+then ham jo jo value to lena hai unko return kar do and hamko isko esse banan hota hai like api so that user can more intrect 
+```jsx
+import { useEffect, useState } from "react";
+export function useLocalstorage(intial, key) {
+    const [watched, setwatched] = useState(function () {
+        const storedvalue = localStorage.getItem(key)
+        return storedvalue ? JSON.parse(storedvalue) : intial
+    });
+
+
+    useEffect(function () {
+        localStorage.setItem(key, JSON.stringify(watched))
+
+    }, [watched, key]);
+
+    return [watched, setwatched]
+}
+```
