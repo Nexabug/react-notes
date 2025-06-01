@@ -73,3 +73,17 @@ Hum **DOM selection** ke bina bhi **DOM element** ko access kar sakte hain. Iske
 
 example:
 ```jsx
+const inputel = useRef(null)
+
+  useEffect(function () {
+    console.log(inputel.current) // yaha pe wah elemnt mil jayega
+    inputel.current.focus() // yaha pe uspe hamne focus lagya hai
+  }, [])
+
+  return (
+    <input
+      ref={inputel}
+    />
+  )
+```
+to jaise ham yaha pe dekh skte hamne ek input me conect kiya hai and usme .focus nam ka effect lagya hai bina use manually DOM selection
