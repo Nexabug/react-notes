@@ -55,3 +55,21 @@ useEffect(function () {
 We created a state with an initial value called `host` and its updater function `setHost`. We made a variable `dataStore` that gets an item named "watched" from local storage. Then we check `dataStore` - if it exists, we return it in parse form else, return `null`.  
 
 We also used a `useEffect` hook that creates a local storage item named "watched". Whenever the `host` state changes, it stringifies the data and updates local storage. This keeps the stored data in sync with our state changes
+
+## useRef
+to use bhi matlab ek use State ke tarah hota hai yah bhi value store Karta Hai vah bhi value store Karta but problem nahi hai ki Jaise Ham use State kya hota tha ki jab jab uski value update hoti Thi tab tab vah render karvata tha vahi hamare pass dusre render nahin karvata jab tak Ham khud Se red internet 
+
+Ham iske value ko badal nahin sakte Hain ki ine mutabil hota Hai
+
+## useRef to select DOM elements 
+
+
+Hum **DOM selection** ke bina bhi **DOM element** ko access kar sakte hain. Iske liye:  
+
+1. Sabse pehle, ek **variable** banayenge jisme `useRef` ka istemal karenge.  
+2. Us `variable` ka naam, jis element ko select karna hai, uske `ref` attribute mein `{variable}` daal denge.  
+3. Ab dono **interconnected** ho jayenge.  
+4. Agar hume us element ko access karna hai, toh `variable.current` use karenge—yeh hume woh element de dega jisse `ref` connect hai.  
+
+example:
+```jsx
