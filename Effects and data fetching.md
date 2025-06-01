@@ -85,3 +85,49 @@ and ek aur baat useeffect ki ye tabhi work karta hai jabtak pura dom tree render
 }
 ```
 Ham yahan per dekh sakte hain ki humne use effect ke andar ek asynchronous function chalaya Hai Jo ek api se data lekar aa raha hai to humne usko ek to pahle Try me Rakha Hai aur ek ko catch block mein rakha hai to try mein jo bhi error aaega wahi catch wale block me chala jayega aur ham control error kar ke console me dekh skte hai
+
+## Adding Loading 
+ab ye tab work Karega jab Ham ek se data bhej kar rahe honge and Jaise hi hamara data ho jaega Ham data ko show kar denge and isko hata denge
+
+so to isko karne ke liye Ham pahle ek state banaa lenge jismein initial value uski falls rahegi Dainik Jahan per Ham data set kar rahe hain uske upar Ham uske speed ko update karke RO Rakh denge aur Jaise data packing khatm ho jaega uske niche Ham uska again update karke false kar denge
+
+ab jaha pe ye data likh kar aa raha hai waha pe condition rendering karwayenge is state ke baises pe
+
+example: 
+``` jsx
+
+function App() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true); // Start with true (loading)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true); // API call shuru, loading ON
+        const response = await fetch('https://api.example.com/data');
+        const result = await response.json();
+        setData(result); // Data mil gaya
+      } catch (error) {
+        console.error("API Error:", error);
+      } finally {
+        setLoading(false); // API call khatam, loading OFF
+      }
+    };
+
+    fetchData();
+  }, []); // Only runs once
+
+  return (
+    <div>
+      {loading ? ( // Agar loading hai toh...
+        <p>Loading data, please wait...</p>
+      ) : data ? ( // Agar loading nahi aur data hai...
+        <p>{data}</p>
+      ) : ( // Agar loading nahi aur data bhi nahi (error case)
+        <p>No data found!</p>
+      )}
+    </div>
+  );
+}
+
+```
