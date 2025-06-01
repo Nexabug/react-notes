@@ -36,17 +36,22 @@ simple rules of hooks
 - Hooks are called only inside a functional component or a custom hook
 
 ## use state more ability
+
 jaise ham abhi tak usestate me koi specific value dal pate the ab ham uske andar ek function ban kar koi kaam karwa kar jo value aye usko return karwa denge jisse ham kaam ko state ke andar hi kar lenge and jo hame usko dena hoga wah usko mil bhi jayega
 
 example:
 ```jsx
-const [watched , setwatched] = useState( function (){
+const [host , setHost] = useState( function (){
   const datastored = localStorage.getItem("watched")
 return datastored ? JSON.parse(storedvalue) : null
 })
 
 useEffect(function () {
-        localStorage.setItem(watched, JSON.stringify(watched))
+        localStorage.setItem(watched, JSON.stringify(host))
 
-    }, [watched]);
+    }, [host]);
 ```
+
+We created a state with an initial value called `host` and its updater function `setHost`. We made a variable `dataStore` that gets an item named "watched" from local storage. Then we check `dataStore` - if it exists, we return it in parse form else, return `null`.  
+
+We also used a `useEffect` hook that creates a local storage item named "watched". Whenever the `host` state changes, it stringifies the data and updates local storage. This keeps the stored data in sync with our state changes
