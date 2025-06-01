@@ -131,3 +131,35 @@ function App() {
 }
 
 ```
+
+## cleanup function 
+
+to Ham ise useeffect mein Laga sakte hain jab function ko hame unmount karna ho 
+last mein return keyword mein bhi Ham kuchh de sakte hain yah tab execute hoga jab upar ka code chal jayega us effect ke andar chal den yah return karke usko unmount Kar dega
+
+example:
+```jsx
+
+function ExampleComponent() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    const controller = new AbortController();
+    
+    fetch('https://api.example.com/data', { signal: controller.signal })
+      .then(response => response.json())
+      .then(data => {
+        if (isMounted) setData(data);
+      });
+
+    // Cleanup function
+    return () => {
+      isMounted = false;
+      controller.abort(); // Cancel the fetch request if component unmounts
+    };
+  }, []);
+
+  return <div>{data ? data.message : 'Loading...'}</div>;
+}
+```
