@@ -139,7 +139,6 @@ last mein return keyword mein bhi Ham kuchh de sakte hain yah tab execute hoga j
 
 example:
 ```jsx
-
 function ExampleComponent() {
   const [data, setData] = useState(null);
 
